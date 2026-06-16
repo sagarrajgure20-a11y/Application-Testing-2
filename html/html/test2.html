@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Page</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#dbeafe,#f0f9ff,#e0f2fe);
+        }
+
+        .search-container{
+            background:white;
+            padding:40px;
+            width:420px;
+            border-radius:20px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.15);
+            text-align:center;
+        }
+
+        h2{
+            color:#1e293b;
+            margin-bottom:25px;
+        }
+
+        .search-box{
+            display:flex;
+            gap:10px;
+        }
+
+        input{
+            flex:1;
+            padding:14px;
+            border:1px solid #cbd5e1;
+            border-radius:12px;
+            font-size:15px;
+            outline:none;
+            transition:0.3s;
+        }
+
+        input:focus{
+            border-color:#2563eb;
+            box-shadow:0 0 8px rgba(37,99,235,0.3);
+        }
+
+        button{
+            padding:14px 22px;
+            border:none;
+            border-radius:12px;
+            background:linear-gradient(to right,#2563eb,#06b6d4);
+            color:white;
+            font-size:15px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            transform:translateY(-2px);
+            box-shadow:0 5px 15px rgba(37,99,235,0.3);
+        }
+
+        .result{
+            margin-top:20px;
+            padding:12px;
+            border-radius:10px;
+            background:#eff6ff;
+            color:#1e40af;
+            display:none;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="search-container">
+
+        <h2>Search Data - abcd</h2>
+
+        <div class="search-box">
+
+            <input 
+                type="text" 
+                id="searchInput"
+                placeholder="Enter search text..."
+            >
+
+            <button onclick="searchData()">
+                Search
+            </button>
+
+        </div>
+
+        <div class="result" id="resultBox"></div>
+
+    </div>
+
+<script>
+
+    function searchData(){
+
+        let inputValue = document.getElementById("searchInput").value;
+        let resultBox = document.getElementById("resultBox");
+
+        if(inputValue.trim() === ""){
+            alert("Please enter search text");
+            return;
+        }
+
+        resultBox.style.display = "block";
+        resultBox.innerHTML = "Searching for : " + inputValue;
+
+    }
+
+</script>
+
+</body>
+</html>
