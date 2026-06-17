@@ -8,7 +8,9 @@
   "main": "index.js",
   "scripts": {"backend": "...",
     "backend:users": "...",
-    "frontend": "..."},
+    "backend:product": "...",
+    "frontend": "..."
+  },
   "dependencies": {
     "@cucumber/cucumber": "^13.0.0",
     "cucumber-js": "^1.0.0",
